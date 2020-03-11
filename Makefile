@@ -3,8 +3,7 @@
 #
 #  -g    adds debugging information to the executable file
 #  -Wall turns on most, but not all, compiler warnings
-#  -std=c++14 enables C++14 standard
-#   For older versions of g++  -std=c++14 needs to replaced with -std=c++1y
+#  -std=c++17 enables C++17 standard
 #
 # for C CC=gcc and for C++  CC = g++
 CC = g++
@@ -19,8 +18,12 @@ TARGET_MB_distances = MB_distances
 #
 default: all
 
-all:  
-	$(CC) $(CFLAGS) -o $(TARGET_MB) MB_distances.cpp
+all: Middle_base MB_distances
+
+Middle_base:
+	$(CC) $(CFLAGS) -o $(TARGET_MB) Middle_base.cpp
+	
+MB_distances:
 	$(CC) $(CFLAGS) -o $(TARGET_MB_distances) MB_distances.cpp
 
 clean: 
