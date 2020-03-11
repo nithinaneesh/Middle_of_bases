@@ -9,7 +9,8 @@
 # for C CC=gcc and for C++  CC = g++
 CC = g++
 CFLAGS  = -g -std=c++17 -Wall 
-TARGET = MB_distances
+TARGET_MB = Middle_base
+TARGET_MB_distances = MB_distances
 
 # typing 'make' will invoke the first target entry in the file 
 # (in this case the default target entry)
@@ -19,7 +20,8 @@ TARGET = MB_distances
 default: all
 
 all:  
-	$(CC) $(CFLAGS) -o $(TARGET) MB_distances.cpp
+	$(CC) $(CFLAGS) -o $(TARGET_MB) MB_distances.cpp
+	$(CC) $(CFLAGS) -o $(TARGET_MB_distances) MB_distances.cpp
 
 clean: 
-	$(RM) $(TARGET) 1E6E_new.pdb *.o *~
+	$(RM) $(TARGET_MB) $(TARGET_MB_distances) *.o *~
